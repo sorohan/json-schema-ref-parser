@@ -224,6 +224,15 @@ describe('$Refs object', function() {
         });
     });
 
+    it('should work with relative paths going up the tree', function() {
+      return $RefParser
+        .resolve(path.abs('specs/relative/relative.yaml'))
+        .then((resolver) => {
+          var value = resolver.get('#/items/properties/accountNumber');
+          expect(value).to.deep.equal({ type: 'object', properties: { id: { type: 'string' } } });
+        });
+    });
+
     it('should get the entire file if there is no hash', function() {
       return $RefParser
         .resolve(path.abs('specs/external/external.yaml'))

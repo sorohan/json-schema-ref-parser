@@ -1,0 +1,5 @@
+title: Accounts
+type: array
+items:
+  title: Test
+  $ref: ./one/account.json

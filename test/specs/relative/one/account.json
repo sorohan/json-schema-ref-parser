@@ -1,0 +1,9 @@
+{
+  "title": "Account",
+  "type": "object",
+  "properties": {
+    "accountNumber": {
+      "$ref": "../two/id.json"
+    }
+  }
+}
